@@ -352,4 +352,13 @@ button {
   .about-journey-image {
     aspect-ratio: 231 / 232 !important;
   }
+  
+  /* Hide scrollbars strictly on mobile for culinary tabs */
+  .menu-tabs-container::-webkit-scrollbar {
+    display: none !important;
+  }
+  .menu-tabs-container {
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+  }
 }
