@@ -82,8 +82,8 @@ export const About: React.FC = () => {
       <section style={{ padding: '20px 0 60px 0' }}>
         <div className="container">
           <img 
-            src="/src/assets/architectural image.jpg.avif" 
-            alt="Archival Architectural Trusses" 
+            src="/src/assets/our journey.png" 
+            alt="Archival Relocation Journey" 
             style={{
               width: '100%',
               height: 'auto',
