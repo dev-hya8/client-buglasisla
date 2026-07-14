@@ -1,8 +1,48 @@
 import React, { useState } from 'react';
-import { Phone, MapPin, Clock, CheckCircle } from 'lucide-react';
+import { Phone, MapPin, Clock, CheckCircle, Mail } from 'lucide-react';
 import confetti from 'canvas-confetti';
 
+const locations = [
+  {
+    name: "Dumaguete City (Flagship)",
+    shortName: "Dumaguete (Flagship)",
+    address: "Ground Floor, EJ Blanco Drive, Piapi, Dumaguete City, Philippines",
+    phone: "+63 917 500 3953",
+    email: "buglasislacafe@riesa.ph",
+    mapUrl: "https://maps.google.com/maps?q=Buglas%20Isla%20Cafe,%20E.J.%20Blanco%20Drive,%20Piapi,%20Dumaguete&t=&z=17&ie=UTF8&iwloc=&output=embed",
+    hours: "Monday to Sunday: 7:00 AM – 10:00 PM (Kitchen Closes at 9:30 PM)"
+  },
+  {
+    name: "Pasig City (Arcovia)",
+    shortName: "Pasig (Arcovia)",
+    address: "Unit A4, Ground Floor, The View Deck, Arcovia City, Pasig City, Philippines",
+    phone: "+63 919 070 9900",
+    email: "buglasarcovia@riesa.ph",
+    mapUrl: "https://maps.google.com/maps?q=The%20View%20Deck,%20Arcovia%20City,%20Pasig%20City,%20Philippines&t=&z=16&ie=UTF8&iwloc=&output=embed",
+    hours: "Monday to Sunday: 7:00 AM – 10:00 PM (Kitchen Closes at 9:30 PM)"
+  },
+  {
+    name: "Muntinlupa City (Alabang)",
+    shortName: "Alabang",
+    address: "Westgate Center, Filinvest City, Alabang, Muntinlupa City, Philippines",
+    phone: "+63 954 352 4987",
+    email: "buglaswestgate@riesa.ph",
+    mapUrl: "https://maps.google.com/maps?q=Westgate%20Center,%20Filinvest%20City,%20Alabang&t=&z=16&ie=UTF8&iwloc=&output=embed",
+    hours: "Monday to Sunday: 7:00 AM – 10:00 PM (Kitchen Closes at 9:30 PM)"
+  },
+  {
+    name: "San Juan, Batangas (Cala Laiya)",
+    shortName: "San Juan (Batangas)",
+    address: "Laiya Ibabao, San Juan, Batangas, Philippines",
+    phone: "+63 917 883 9900",
+    email: "reservations@calalaiya.ph",
+    mapUrl: "https://maps.google.com/maps?q=Cala%20Laiya,%20Laiya%20Ibabao,%20San%20Juan,%20Batangas,%20Philippines&t=&z=14&ie=UTF8&iwloc=&output=embed",
+    hours: "Monday to Sunday: 7:00 AM – 10:00 PM (Kitchen Closes at 9:30 PM)"
+  }
+];
+
 export const Contact: React.FC = () => {
+  const [selectedLocationIdx, setSelectedLocationIdx] = useState(0);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -10,11 +50,14 @@ export const Contact: React.FC = () => {
     guests: '2',
     date: '',
     session: 'coffee',
+    branch: locations[0].name,
     notes: ''
   });
   
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const activeLoc = locations[selectedLocationIdx];
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -28,6 +71,14 @@ export const Contact: React.FC = () => {
         [e.target.name]: ''
       });
     }
+  };
+
+  const handleBranchSelect = (idx: number) => {
+    setSelectedLocationIdx(idx);
+    setFormData(prev => ({
+      ...prev,
+      branch: locations[idx].name
+    }));
   };
 
   const validate = () => {
@@ -67,6 +118,7 @@ export const Contact: React.FC = () => {
       guests: '2',
       date: '',
       session: 'coffee',
+      branch: locations[selectedLocationIdx].name,
       notes: ''
     });
     setIsSubmitted(false);
@@ -117,16 +169,50 @@ export const Contact: React.FC = () => {
                 border: '1px solid var(--color-border)',
                 borderRadius: '2px'
               }}>
-                <h3 style={{ fontSize: '1.5rem', marginBottom: '24px' }}>Find Us</h3>
+                <h3 style={{ fontSize: '1.5rem', marginBottom: '20px' }}>Our Locations</h3>
                 
+                {/* Location Tab Switcher */}
+                <div style={{
+                  display: 'flex',
+                  gap: '8px',
+                  overflowX: 'auto',
+                  paddingBottom: '12px',
+                  marginBottom: '28px',
+                  borderBottom: '1px solid var(--color-border)',
+                  maxWidth: '100%',
+                  scrollbarWidth: 'none',
+                  msOverflowStyle: 'none'
+                }} className="menu-tabs-container">
+                  {locations.map((loc, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => handleBranchSelect(idx)}
+                      style={{
+                        padding: '8px 16px',
+                        borderRadius: '2px',
+                        fontSize: '0.85rem',
+                        fontWeight: 600,
+                        fontFamily: 'var(--font-sans)',
+                        whiteSpace: 'nowrap',
+                        cursor: 'pointer',
+                        transition: 'var(--transition-fast)',
+                        backgroundColor: selectedLocationIdx === idx ? 'var(--color-mahogany)' : 'transparent',
+                        color: selectedLocationIdx === idx ? 'var(--color-capiz)' : 'var(--color-text-light)',
+                        border: '1px solid ' + (selectedLocationIdx === idx ? 'var(--color-mahogany)' : 'var(--color-border)')
+                      }}
+                    >
+                      {loc.shortName}
+                    </button>
+                  ))}
+                </div>
+
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
                   <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
                     <MapPin style={{ color: 'var(--color-terracotta)', flexShrink: 0, marginTop: '2px' }} size={20} />
                     <div>
-                      <p style={{ fontWeight: 600, fontSize: '0.95rem' }}>Location</p>
-                      <p style={{ fontSize: '0.9rem', color: 'var(--color-text-light)', marginTop: '2px' }}>
-                        Ground Floor, E.J. Blanco Drive, Piapi, <br />
-                        Dumaguete City, 6200 Negros Oriental
+                      <p style={{ fontWeight: 600, fontSize: '0.95rem' }}>Address</p>
+                      <p style={{ fontSize: '0.9rem', color: 'var(--color-text-light)', marginTop: '2px', lineHeight: '1.5' }}>
+                        {activeLoc.address}
                       </p>
                     </div>
                   </div>
@@ -135,9 +221,8 @@ export const Contact: React.FC = () => {
                     <Clock style={{ color: 'var(--color-forest)', flexShrink: 0, marginTop: '2px' }} size={20} />
                     <div>
                       <p style={{ fontWeight: 600, fontSize: '0.95rem' }}>Hours of Sanctuary</p>
-                      <p style={{ fontSize: '0.9rem', color: 'var(--color-text-light)', marginTop: '2px' }}>
-                        Monday to Sunday: 7:00 AM – 10:00 PM <br />
-                        Kitchen Closes at 9:30 PM
+                      <p style={{ fontSize: '0.9rem', color: 'var(--color-text-light)', marginTop: '2px', lineHeight: '1.5' }}>
+                        {activeLoc.hours}
                       </p>
                     </div>
                   </div>
@@ -146,9 +231,20 @@ export const Contact: React.FC = () => {
                     <Phone style={{ color: 'var(--color-mahogany)', flexShrink: 0, marginTop: '2px' }} size={20} />
                     <div>
                       <p style={{ fontWeight: 600, fontSize: '0.95rem' }}>Contact Details</p>
+                      <p style={{ fontSize: '0.9rem', color: 'var(--color-text-light)', marginTop: '2px', lineHeight: '1.5' }}>
+                        {activeLoc.phone}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
+                    <Mail style={{ color: 'var(--color-mahogany)', flexShrink: 0, marginTop: '2px' }} size={20} />
+                    <div>
+                      <p style={{ fontWeight: 600, fontSize: '0.95rem' }}>Email Us</p>
                       <p style={{ fontSize: '0.9rem', color: 'var(--color-text-light)', marginTop: '2px' }}>
-                        +63 917 500 3953 <br />
-                        buglasislacafe@riesa.ph
+                        <a href={`mailto:${activeLoc.email}`} style={{ color: 'inherit', textDecoration: 'underline' }}>
+                          {activeLoc.email}
+                        </a>
                       </p>
                     </div>
                   </div>
@@ -165,8 +261,8 @@ export const Contact: React.FC = () => {
                 aspectRatio: '16/10'
               }}>
                 <iframe
-                  title="Buglas Isla Café Location Map"
-                  src="https://maps.google.com/maps?q=Buglas%20Isla%20Cafe,%20E.J.%20Blanco%20Drive,%20Piapi,%20Dumaguete&t=&z=17&ie=UTF8&iwloc=&output=embed"
+                  title={`${activeLoc.name} Location Map`}
+                  src={activeLoc.mapUrl}
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
@@ -193,6 +289,24 @@ export const Contact: React.FC = () => {
                   <p style={{ color: 'var(--color-text-light)', fontSize: '0.9rem', marginBottom: '32px' }}>
                     Fill out the form below. We will confirm your reservation request via email within 1 hour.
                   </p>
+
+                  {/* Branch Selection Dropdown */}
+                  <div className="form-group">
+                    <label className="form-label" htmlFor="branch">Dining Destination</label>
+                    <select 
+                      id="branch"
+                      name="branch"
+                      value={formData.branch}
+                      onChange={handleChange}
+                      className="form-select"
+                    >
+                      {locations.map((loc, idx) => (
+                        <option key={idx} value={loc.name}>
+                          {loc.name}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
 
                   {/* Name Input */}
                   <div className="form-group">
@@ -332,7 +446,7 @@ export const Contact: React.FC = () => {
                     maxWidth: '360px',
                     marginBottom: '40px'
                   }}>
-                    Thank you, <strong>{formData.name}</strong>. We've received your request for <strong>{formData.guests} guests</strong> on <strong>{formData.date}</strong>. A confirmation email has been sent to <strong>{formData.email}</strong>.
+                    Thank you, <strong>{formData.name}</strong>. We've received your request for the <strong>{formData.branch}</strong> location ({formData.guests} guests on {formData.date}). A confirmation email has been sent to <strong>{formData.email}</strong>.
                   </p>
                   
                   <div style={{
