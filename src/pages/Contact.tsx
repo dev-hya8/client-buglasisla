@@ -90,7 +90,7 @@ export const Contact: React.FC = () => {
           }}>
             Reservations
           </span>
-          <h1 style={{ fontSize: '3.2rem', marginBottom: '16px' }}>Step Inside</h1>
+          <h1 style={{ fontSize: 'clamp(2.2rem, 5vw, 3.2rem)', marginBottom: '16px' }}>Step Inside</h1>
           <p style={{ color: 'var(--color-text-light)', lineHeight: '1.6' }}>
             Book a table in our gardens or inside the historic capiz lounge. Walk-ins are welcome, but tables fill quickly during golden hour.
           </p>

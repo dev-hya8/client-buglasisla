@@ -120,7 +120,7 @@ export const Cafe: React.FC = () => {
             }}>
               The Vibe & Flavors
             </span>
-            <h1 style={{ fontSize: '3.5rem', marginBottom: '24px' }}>
+            <h1 style={{ fontSize: 'clamp(2.3rem, 6vw, 3.5rem)', marginBottom: '24px' }}>
               Dine inside a heritage relic.
             </h1>
             <p style={{ color: 'var(--color-text-light)', lineHeight: '1.7' }}>
