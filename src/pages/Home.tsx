@@ -1,6 +1,5 @@
 import React from 'react';
 import { ArrowRight, Compass, Shield, Coffee } from 'lucide-react';
-import { ImagePlaceholder } from '../components/ImagePlaceholder';
 
 interface HomeProps {
   setActiveTab: (tab: string) => void;
@@ -109,10 +108,19 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab }) => {
             
             {/* Left Image Placeholder */}
             <div>
-              <ImagePlaceholder 
-                title="Visual: The Details of Reassembly" 
-                description="Close-up architectural image of a massive timber pillar and ceiling joinery, showing numbering marks or rustic weathering, capturing the authenticity of the relocation process."
-                aspectRatio="1/1"
+              <img 
+                src="/src/assets/architectural image.jpg.avif" 
+                alt="Details of architectural reassembly" 
+                style={{
+                  width: '100%',
+                  height: 'auto',
+                  aspectRatio: '1/1',
+                  objectFit: 'cover',
+                  borderRadius: '4px',
+                  border: '1px solid var(--color-border)',
+                  boxShadow: '0 8px 30px rgba(35, 23, 17, 0.05)',
+                  display: 'block'
+                }} 
               />
             </div>
 
