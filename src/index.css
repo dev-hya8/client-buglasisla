@@ -1,0 +1,270 @@
+/* Buglas Isla Custom Design System & Global Styles */
+
+:root {
+  /* Colors */
+  --color-mahogany: #231711;
+  --color-capiz: #FAF8F5;
+  --color-forest: #1B3326;
+  --color-terracotta: #BD634E;
+  --color-bg-card: #FFFDFB;
+  --color-text: #3A2D27;
+  --color-text-light: #75655D;
+  --color-border: #E8E2D7;
+  
+  /* Fonts */
+  --font-serif: 'Cormorant Garamond', serif;
+  --font-sans: 'Plus Jakarta Sans', sans-serif;
+  
+  /* Layout */
+  --max-width: 1200px;
+  --header-height: 80px;
+  
+  /* Animation timings */
+  --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: all 0.2s ease;
+}
+
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-capiz);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* Selection Color */
+::selection {
+  background-color: var(--color-terracotta);
+  color: var(--color-capiz);
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  color: var(--color-mahogany);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition-fast);
+}
+
+button {
+  background: none;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-capiz);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-mahogany);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-forest);
+}
+
+/* Utility Layout Classes */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 24px;
+  }
+}
+
+/* Apple-style Buttons */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-terracotta);
+  color: var(--color-capiz);
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 14px 28px;
+  border-radius: 2px;
+  box-shadow: 0 4px 14px rgba(189, 99, 78, 0.15);
+  transition: var(--transition-smooth);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-mahogany);
+  box-shadow: 0 6px 20px rgba(35, 23, 17, 0.2);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-mahogany);
+  color: var(--color-mahogany);
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 13px 27px;
+  border-radius: 2px;
+  transition: var(--transition-smooth);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-mahogany);
+  color: var(--color-capiz);
+  transform: translateY(-2px);
+}
+
+/* High-fidelity Image Placeholders (Apple style) */
+.image-placeholder {
+  position: relative;
+  background-color: #FAF6F0;
+  border: 1px dashed var(--color-border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  text-align: center;
+  border-radius: 4px;
+  aspect-ratio: 16/10;
+  overflow: hidden;
+  transition: var(--transition-smooth);
+}
+
+.image-placeholder:hover {
+  border-color: var(--color-terracotta);
+  background-color: #FAF4EB;
+}
+
+.image-placeholder-icon {
+  color: var(--color-terracotta);
+  margin-bottom: 16px;
+  opacity: 0.7;
+}
+
+.image-placeholder-title {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  color: var(--color-mahogany);
+  margin-bottom: 8px;
+}
+
+.image-placeholder-desc {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  color: var(--color-text-light);
+  max-width: 320px;
+  line-height: 1.5;
+}
+
+.image-placeholder-aspect {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  background-color: var(--color-mahogany);
+  color: var(--color-capiz);
+  padding: 2px 8px;
+  border-radius: 2px;
+  opacity: 0.8;
+}
+
+/* Page Animations */
+.animate-fade-in {
+  animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-fade-up {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+.delay-4 { animation-delay: 0.4s; }
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Form Styles */
+.form-group {
+  margin-bottom: 24px;
+}
+
+.form-label {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-light);
+  margin-bottom: 8px;
+}
+
+.form-input, .form-select, .form-textarea {
+  width: 100%;
+  padding: 14px 16px;
+  background-color: var(--color-capiz);
+  border: 1px solid var(--color-border);
+  border-radius: 2px;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  color: var(--color-text);
+  outline: none;
+  transition: var(--transition-fast);
+}
+
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  border-color: var(--color-terracotta);
+  background-color: var(--color-bg-card);
+  box-shadow: 0 0 0 2px rgba(189, 99, 78, 0.1);
+}
