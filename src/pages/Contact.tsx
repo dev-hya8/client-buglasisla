@@ -233,7 +233,7 @@ export const Contact: React.FC = () => {
                         name="phone"
                         value={formData.phone}
                         onChange={handleChange}
-                        placeholder="+63 917 123 4567"
+                        placeholder="+63 917 500 3953"
                         className="form-input"
                       />
                       {errors.phone && <span className="error-text">{errors.phone}</span>}

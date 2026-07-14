@@ -57,7 +57,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
               <a href="#" aria-label="Facebook" style={{ color: 'var(--color-capiz)', opacity: 0.7, display: 'inline-flex', alignItems: 'center' }} className="social-link">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
               </a>
-              <a href="mailto:hello@buglasisla.com" aria-label="Email" style={{ color: 'var(--color-capiz)', opacity: 0.7 }} className="social-link">
+              <a href="mailto:buglasislacafe@riesa.ph" aria-label="Email" style={{ color: 'var(--color-capiz)', opacity: 0.7 }} className="social-link">
                 <Mail size={20} />
               </a>
             </div>
