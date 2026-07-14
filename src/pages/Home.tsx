@@ -329,7 +329,7 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab }) => {
         @media (max-width: 900px) {
           .hero-grid {
             grid-template-columns: 1fr !important;
-            gap: 40px !important;
+            gap: 20px !important;
             text-align: center;
           }
           .hero-grid p {
