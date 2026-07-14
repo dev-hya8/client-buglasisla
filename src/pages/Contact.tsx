@@ -136,8 +136,8 @@ export const Contact: React.FC = () => {
                     <div>
                       <p style={{ fontWeight: 600, fontSize: '0.95rem' }}>Hours of Sanctuary</p>
                       <p style={{ fontSize: '0.9rem', color: 'var(--color-text-light)', marginTop: '2px' }}>
-                        Open Daily: 8:00 AM – 9:00 PM <br />
-                        Kitchen Closes at 8:30 PM
+                        Monday to Sunday: 7:00 AM – 10:00 PM <br />
+                        Kitchen Closes at 9:30 PM
                       </p>
                     </div>
                   </div>
@@ -282,10 +282,10 @@ export const Contact: React.FC = () => {
                         onChange={handleChange}
                         className="form-select"
                       >
-                        <option value="brunch">Brunch (8 AM - 11 AM)</option>
+                        <option value="brunch">Brunch (7 AM - 11 AM)</option>
                         <option value="coffee">Coffee (11 AM - 4 PM)</option>
                         <option value="sunset">Sunset Vibe (4 PM - 6 PM)</option>
-                        <option value="dinner">Dinner (6 PM - 9 PM)</option>
+                        <option value="dinner">Dinner (6 PM - 10 PM)</option>
                       </select>
                     </div>
                   </div>

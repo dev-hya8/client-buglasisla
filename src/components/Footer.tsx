@@ -112,10 +112,10 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
               Sanctuary Hours
             </h4>
             <p style={{ fontSize: '0.9rem', marginBottom: '8px' }}>
-              <strong>Open Daily</strong>
+              <strong>Monday to Sunday</strong>
             </p>
             <p style={{ fontSize: '0.9rem', lineHeight: '1.5' }}>
-              8:00 AM – 9:00 PM
+              7:00 AM – 10:00 PM
             </p>
             <p style={{ fontSize: '0.8rem', marginTop: '12px', opacity: 0.5 }}>
               Reservations recommended for garden dining.
