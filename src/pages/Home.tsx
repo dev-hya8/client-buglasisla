@@ -74,7 +74,7 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab }) => {
 
           <div className="animate-fade-up delay-2" style={{ width: '100%' }}>
             <img 
-              src="/src/assets/Hero.jpg" 
+              src="/src/assets/new hero.png" 
               alt="Buglas Isla Ancestral House" 
               style={{
                 width: '100%',
@@ -284,7 +284,7 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab }) => {
       <section style={{ padding: '40px 0' }}>
         <div className="container">
           <img 
-            src="/src/assets/final image.png" 
+            src="/src/assets/final image.jpg" 
             alt="Al Fresco Garden Dining at Buglas Isla" 
             style={{
               width: '100%',
