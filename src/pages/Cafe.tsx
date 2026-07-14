@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { ImagePlaceholder } from '../components/ImagePlaceholder';
 
 export const Cafe: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState('coffee');
@@ -316,39 +315,25 @@ export const Cafe: React.FC = () => {
               ))}
             </div>
 
-            {/* Sidebar Image Suggestion (dynamic) */}
+            {/* Sidebar Image */}
             <div style={{
               position: 'sticky',
               top: '120px'
             }} className="menu-image-container">
-              {activeCategory === 'coffee' && (
-                <ImagePlaceholder 
-                  title="Photo: Signature Cold Brew Served" 
-                  description="A cold glass of signature coffee resting on a heavy mahogany tabletop. Droplets of condensation catch the low-angled garden sunlight."
-                  aspectRatio="1/1"
-                />
-              )}
-              {activeCategory === 'delicacies' && (
-                <ImagePlaceholder 
-                  title="Photo: Local Budbud Kabog Plated" 
-                  description="Traditional millet delicacies styled on custom-made dark ceramics, drizzled with native Bais chocolate syrup."
-                  aspectRatio="1/1"
-                />
-              )}
-              {activeCategory === 'brunch' && (
-                <ImagePlaceholder 
-                  title="Photo: Muscovado Bacon Benedict" 
-                  description="A gourmet breakfast dish close-up. Thick glaze-cut bacon and soft poached eggs, shot with macro lens detailing textures."
-                  aspectRatio="1/1"
-                />
-              )}
-              {activeCategory === 'dinner' && (
-                <ImagePlaceholder 
-                  title="Photo: Piapi Sea Bass Presentation" 
-                  description="Pan-seared fish filet resting in batwan-infused broth, plated elegantly with fresh green garnishes on a terracotta dish."
-                  aspectRatio="1/1"
-                />
-              )}
+              <img 
+                src="/src/assets/the cafe.png" 
+                alt="Dining Experience at Buglas Isla" 
+                style={{
+                  width: '100%',
+                  height: 'auto',
+                  aspectRatio: '1/1',
+                  objectFit: 'cover',
+                  borderRadius: '4px',
+                  border: '1px solid var(--color-border)',
+                  boxShadow: '0 8px 30px rgba(35, 23, 17, 0.05)',
+                  display: 'block'
+                }} 
+              />
             </div>
 
           </div>
