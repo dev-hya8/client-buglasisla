@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Phone, MapPin, Clock, CheckCircle } from 'lucide-react';
-import { ImagePlaceholder } from '../components/ImagePlaceholder';
 import confetti from 'canvas-confetti';
 
 export const Contact: React.FC = () => {
@@ -126,8 +125,8 @@ export const Contact: React.FC = () => {
                     <div>
                       <p style={{ fontWeight: 600, fontSize: '0.95rem' }}>Location</p>
                       <p style={{ fontSize: '0.9rem', color: 'var(--color-text-light)', marginTop: '2px' }}>
-                        Piapi, Dumaguete City, Negros Oriental <br />
-                        (Just a brief walk from Rizal Boulevard)
+                        Ground Floor, E.J. Blanco Drive, Piapi, <br />
+                        Dumaguete City, 6200 Negros Oriental
                       </p>
                     </div>
                   </div>
@@ -148,20 +147,34 @@ export const Contact: React.FC = () => {
                     <div>
                       <p style={{ fontWeight: 600, fontSize: '0.95rem' }}>Contact Details</p>
                       <p style={{ fontSize: '0.9rem', color: 'var(--color-text-light)', marginTop: '2px' }}>
-                        +63 (917) 123-4567 <br />
-                        hello@buglasisla.com
+                        +63 917 500 3953 <br />
+                        buglasislacafe@riesa.ph
                       </p>
                     </div>
                   </div>
                 </div>
               </div>
 
-              {/* Map Placeholder */}
-              <ImagePlaceholder 
-                title="Styled Location Map" 
-                description="A custom graphical vector map showing Dumaguete coastline, Rizal Boulevard, and the Buglas Isla site in Piapi, tinted in warm cream and mahogany hues, blending with the web design."
-                aspectRatio="16/9"
-              />
+              {/* Embedded Interactive Map */}
+              <div style={{
+                width: '100%',
+                borderRadius: '4px',
+                border: '1px solid var(--color-border)',
+                overflow: 'hidden',
+                boxShadow: '0 8px 30px rgba(35, 23, 17, 0.05)',
+                aspectRatio: '16/10'
+              }}>
+                <iframe
+                  title="Buglas Isla Café Location Map"
+                  src="https://maps.google.com/maps?q=Buglas%20Isla%20Cafe,%20E.J.%20Blanco%20Drive,%20Piapi,%20Dumaguete&t=&z=17&ie=UTF8&iwloc=&output=embed"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen={true}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
 
             </div>
 
