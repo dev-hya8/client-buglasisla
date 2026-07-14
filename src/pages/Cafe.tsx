@@ -139,10 +139,19 @@ export const Cafe: React.FC = () => {
             
             {/* Zone 1 */}
             <div>
-              <ImagePlaceholder 
-                title="The Garden Al Fresco" 
-                description="View of wrought iron patio furniture under large, shady green palms and native orchids. Natural, soft outdoor light."
-                aspectRatio="4/3"
+              <img 
+                src="/src/assets/garden.png" 
+                alt="The Garden Al Fresco at Buglas Isla" 
+                style={{
+                  width: '100%',
+                  height: 'auto',
+                  aspectRatio: '4/3',
+                  objectFit: 'cover',
+                  borderRadius: '4px',
+                  border: '1px solid var(--color-border)',
+                  boxShadow: '0 8px 30px rgba(35, 23, 17, 0.05)',
+                  display: 'block'
+                }} 
               />
               <h3 style={{ fontSize: '1.4rem', marginTop: '20px', marginBottom: '8px' }}>The Garden Al Fresco</h3>
               <p style={{ fontSize: '0.9rem', color: 'var(--color-text-light)', lineHeight: '1.6' }}>
@@ -152,10 +161,19 @@ export const Cafe: React.FC = () => {
 
             {/* Zone 2 */}
             <div>
-              <ImagePlaceholder 
-                title="The Capiz Lounge" 
-                description="Elegant indoor dining tables next to sliding capiz lattice window panels. Soft light filters in, casting square patterns on wooden floorboards."
-                aspectRatio="4/3"
+              <img 
+                src="/src/assets/capiz.png" 
+                alt="The Capiz Lounge at Buglas Isla" 
+                style={{
+                  width: '100%',
+                  height: 'auto',
+                  aspectRatio: '4/3',
+                  objectFit: 'cover',
+                  borderRadius: '4px',
+                  border: '1px solid var(--color-border)',
+                  boxShadow: '0 8px 30px rgba(35, 23, 17, 0.05)',
+                  display: 'block'
+                }} 
               />
               <h3 style={{ fontSize: '1.4rem', marginTop: '20px', marginBottom: '8px' }}>The Capiz Lounge</h3>
               <p style={{ fontSize: '0.9rem', color: 'var(--color-text-light)', lineHeight: '1.6' }}>
@@ -165,10 +183,19 @@ export const Cafe: React.FC = () => {
 
             {/* Zone 3 */}
             <div>
-              <ImagePlaceholder 
-                title="The Mahogany Room" 
-                description="Close-up of heavy dark wood dining tables, surrounded by historic pillars and exposed rafters. Classic, moody interior lighting."
-                aspectRatio="4/3"
+              <img 
+                src="/src/assets/mahogany.png" 
+                alt="The Mahogany Room at Buglas Isla" 
+                style={{
+                  width: '100%',
+                  height: 'auto',
+                  aspectRatio: '4/3',
+                  objectFit: 'cover',
+                  borderRadius: '4px',
+                  border: '1px solid var(--color-border)',
+                  boxShadow: '0 8px 30px rgba(35, 23, 17, 0.05)',
+                  display: 'block'
+                }} 
               />
               <h3 style={{ fontSize: '1.4rem', marginTop: '20px', marginBottom: '8px' }}>The Mahogany Room</h3>
               <p style={{ fontSize: '0.9rem', color: 'var(--color-text-light)', lineHeight: '1.6' }}>
