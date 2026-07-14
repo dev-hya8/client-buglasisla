@@ -76,12 +76,9 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab }) => {
             <img 
               src="/src/assets/new hero.png" 
               alt="Buglas Isla Ancestral House" 
+              className="editorial-image"
               style={{
-                width: '100%',
-                height: 'auto',
                 aspectRatio: '4/5',
-                objectFit: 'cover',
-                borderRadius: '4px',
                 border: '1px solid var(--color-border)',
                 boxShadow: '0 8px 30px rgba(35, 23, 17, 0.05)',
                 display: 'block'
@@ -111,12 +108,9 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab }) => {
               <img 
                 src="/src/assets/architectural image.jpg.avif" 
                 alt="Details of architectural reassembly" 
+                className="editorial-image"
                 style={{
-                  width: '100%',
-                  height: 'auto',
                   aspectRatio: '1/1',
-                  objectFit: 'cover',
-                  borderRadius: '4px',
                   border: '1px solid var(--color-border)',
                   boxShadow: '0 8px 30px rgba(35, 23, 17, 0.05)',
                   display: 'block'
@@ -298,12 +292,9 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab }) => {
           <img 
             src="/src/assets/final image.jpg" 
             alt="Al Fresco Garden Dining at Buglas Isla" 
+            className="full-bleed-image"
             style={{
-              width: '100%',
-              height: 'auto',
               aspectRatio: '21/9',
-              objectFit: 'cover',
-              borderRadius: '4px',
               border: '1px solid var(--color-border)',
               boxShadow: '0 8px 30px rgba(35, 23, 17, 0.05)',
               display: 'block'

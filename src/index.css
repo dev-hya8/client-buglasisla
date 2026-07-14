@@ -336,3 +336,40 @@ button {
     text-align: center;
   }
 }
+
+/* Responsive Image Handling Systems */
+.editorial-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.full-bleed-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+  .editorial-image {
+    width: 100% !important;
+    height: 350px !important;
+    aspect-ratio: auto !important;
+  }
+  
+  .full-bleed-image {
+    width: 100vw !important;
+    height: 350px !important;
+    aspect-ratio: auto !important;
+    border-radius: 0 !important;
+    border-left: none !important;
+    border-right: none !important;
+    position: relative !important;
+    left: 50% !important;
+    right: 50% !important;
+    margin-left: -50vw !important;
+    margin-right: -50vw !important;
+  }
+}
