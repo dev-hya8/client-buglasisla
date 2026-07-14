@@ -6,16 +6,25 @@ const locations = [
   {
     name: "Dumaguete City (Flagship)",
     shortName: "Dumaguete (Flagship)",
-    address: "Ground Floor, EJ Blanco Drive, Piapi, Dumaguete City, Philippines",
+    address: "Ground Floor, E.J. Blanco Drive, Piapi, Dumaguete City, 6200 Negros Oriental",
     phone: "+63 917 500 3953",
     email: "buglasislacafe@riesa.ph",
     mapUrl: "https://maps.google.com/maps?q=Buglas%20Isla%20Cafe,%20E.J.%20Blanco%20Drive,%20Piapi,%20Dumaguete&t=&z=17&ie=UTF8&iwloc=&output=embed",
     hours: "Monday to Sunday: 7:00 AM – 10:00 PM (Kitchen Closes at 9:30 PM)"
   },
   {
+    name: "Bais City",
+    shortName: "Bais City",
+    address: "Mabini Street, Bais City, Negros Oriental, Philippines",
+    phone: "+63 917 500 3953",
+    email: "buglasislacafe@riesa.ph",
+    mapUrl: "https://maps.google.com/maps?q=Mabini%20Street,%20Bais%20City,%20Negros%20Oriental,%20Philippines&t=&z=16&ie=UTF8&iwloc=&output=embed",
+    hours: "Monday to Sunday: 7:00 AM – 10:00 PM (Kitchen Closes at 9:30 PM)"
+  },
+  {
     name: "Pasig City (Arcovia)",
     shortName: "Pasig (Arcovia)",
-    address: "Unit A4, Ground Floor, The View Deck, Arcovia City, Pasig City, Philippines",
+    address: "Unit A4, Ground Floor, The View Deck, Arcovia City, Eulogio Rodriguez Jr. Avenue (C5 Road), Pasig City, Metro Manila, Philippines",
     phone: "+63 919 070 9900",
     email: "buglasarcovia@riesa.ph",
     mapUrl: "https://maps.google.com/maps?q=The%20View%20Deck,%20Arcovia%20City,%20Pasig%20City,%20Philippines&t=&z=16&ie=UTF8&iwloc=&output=embed",
@@ -28,15 +37,6 @@ const locations = [
     phone: "+63 954 352 4987",
     email: "buglaswestgate@riesa.ph",
     mapUrl: "https://maps.google.com/maps?q=Westgate%20Center,%20Filinvest%20City,%20Alabang&t=&z=16&ie=UTF8&iwloc=&output=embed",
-    hours: "Monday to Sunday: 7:00 AM – 10:00 PM (Kitchen Closes at 9:30 PM)"
-  },
-  {
-    name: "San Juan, Batangas (Cala Laiya)",
-    shortName: "San Juan (Batangas)",
-    address: "Laiya Ibabao, San Juan, Batangas, Philippines",
-    phone: "+63 917 883 9900",
-    email: "reservations@calalaiya.ph",
-    mapUrl: "https://maps.google.com/maps?q=Cala%20Laiya,%20Laiya%20Ibabao,%20San%20Juan,%20Batangas,%20Philippines&t=&z=14&ie=UTF8&iwloc=&output=embed",
     hours: "Monday to Sunday: 7:00 AM – 10:00 PM (Kitchen Closes at 9:30 PM)"
   }
 ];
