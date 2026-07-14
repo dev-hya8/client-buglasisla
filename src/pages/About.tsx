@@ -83,10 +83,10 @@ export const About: React.FC = () => {
           <img 
             src="/src/assets/our journey.png" 
             alt="Archival Relocation Journey" 
+            className="about-journey-image"
             style={{
               width: '100%',
               height: 'auto',
-              aspectRatio: '21/9',
               objectFit: 'cover',
               borderRadius: '4px',
               border: '1px solid var(--color-border)',

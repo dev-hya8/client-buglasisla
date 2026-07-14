@@ -342,8 +342,14 @@ button {
   aspect-ratio: 21/9;
 }
 
+/* About Journey main cover image aspect ratio */
+.about-journey-image {
+  aspect-ratio: 21/9;
+}
+
 @media (max-width: 768px) {
-  .home-final-image {
+  .home-final-image,
+  .about-journey-image {
     aspect-ratio: 231 / 232 !important;
   }
 }
