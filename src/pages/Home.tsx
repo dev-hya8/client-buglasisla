@@ -73,12 +73,20 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab }) => {
             </div>
           </div>
 
-          {/* Hero Visual Mockup */}
-          <div className="animate-fade-up delay-2">
-            <ImagePlaceholder 
-              title="Hero: Ancestral House at Dusk" 
-              description="A warm, wide landscape photo of the relocated heritage mansion. Golden lights shine through the traditional sliding capiz shell windows, reflecting off green tropical garden leaves. Deep mahogany woods dominate."
-              aspectRatio="4/5"
+          <div className="animate-fade-up delay-2" style={{ width: '100%' }}>
+            <img 
+              src="/src/assets/Hero.jpg" 
+              alt="Buglas Isla Ancestral House" 
+              style={{
+                width: '100%',
+                height: 'auto',
+                aspectRatio: '4/5',
+                objectFit: 'cover',
+                borderRadius: '4px',
+                border: '1px solid var(--color-border)',
+                boxShadow: '0 8px 30px rgba(35, 23, 17, 0.05)',
+                display: 'block'
+              }} 
             />
           </div>
         </div>
@@ -267,10 +275,19 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab }) => {
       {/* 4. VISUAL HERO CALL-OUT */}
       <section style={{ padding: '40px 0' }}>
         <div className="container">
-          <ImagePlaceholder 
-            title="Full Width: Al Fresco Garden Dining" 
-            description="A wide, sweeping, landscape format photo showing the garden tables set under high-canopy tropical trees at dusk. Candlelight flickers on mahogany tables with the ancestral home glowing warmly in the background."
-            aspectRatio="21/9"
+          <img 
+            src="/src/assets/al fresco garden dining.jpeg" 
+            alt="Al Fresco Garden Dining at Buglas Isla" 
+            style={{
+              width: '100%',
+              height: 'auto',
+              aspectRatio: '21/9',
+              objectFit: 'cover',
+              borderRadius: '4px',
+              border: '1px solid var(--color-border)',
+              boxShadow: '0 8px 30px rgba(35, 23, 17, 0.05)',
+              display: 'block'
+            }} 
           />
         </div>
       </section>
