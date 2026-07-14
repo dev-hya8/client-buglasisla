@@ -50,7 +50,7 @@ export const Header: React.FC<HeaderProps> = ({ activeTab, setActiveTab }) => {
       display: 'flex',
       alignItems: 'center'
     }}>
-      <div className="container header-container" style={{
+      <div className="container" style={{
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between'
