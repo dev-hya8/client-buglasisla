@@ -284,6 +284,8 @@ export const Cafe: React.FC = () => {
                     display: 'flex',
                     justifyContent: 'space-between',
                     alignItems: 'baseline',
+                    flexWrap: 'wrap',
+                    gap: '8px 16px',
                     marginBottom: '8px'
                   }}>
                     <h3 style={{

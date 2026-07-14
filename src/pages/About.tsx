@@ -295,6 +295,10 @@ export const About: React.FC = () => {
             grid-template-columns: 1fr !important;
             gap: 40px !important;
           }
+          .timeline-panel {
+            padding: 24px !important;
+            min-height: auto !important;
+          }
         }
       `}</style>
     </div>
