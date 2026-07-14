@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { ImagePlaceholder } from '../components/ImagePlaceholder';
 import { History, Eye, Hammer, Heart } from 'lucide-react';
 
 export const About: React.FC = () => {
@@ -266,13 +265,20 @@ export const About: React.FC = () => {
               We have retained these passive cooling dynamics. The ocean breeze enters freely from the coast, passing through the garden foliage, and circulating through the high wood trusses. It is natural cooling that encourages you to linger.
             </p>
           </div>
-          <div>
-            <ImagePlaceholder 
-              title="Aesthetic: Sliding Capiz Shell Panels" 
-              description="A vertical shot showing light passing through translucent capiz shell window frames. The textures are warm and detailed, highlighting the classic square lattice pattern."
-              aspectRatio="1/1"
+            <img 
+              src="/src/assets/presko.png" 
+              alt="Sliding Capiz Shell Panels" 
+              style={{
+                width: '100%',
+                height: 'auto',
+                aspectRatio: '1/1',
+                objectFit: 'cover',
+                borderRadius: '4px',
+                border: '1px solid var(--color-border)',
+                boxShadow: '0 8px 30px rgba(35, 23, 17, 0.05)',
+                display: 'block'
+              }} 
             />
-          </div>
         </div>
       </section>
 
