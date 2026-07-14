@@ -56,7 +56,7 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab }) => {
             }}>
               Step into an authentic ancestral mansion, relocated piece by piece from Bais City, restored to offer a quiet sanctuary of heritage and comfort.
             </p>
-            <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
+            <div className="hero-buttons-container">
               <button 
                 onClick={() => setActiveTab('contact')}
                 className="btn-primary"
