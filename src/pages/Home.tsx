@@ -214,8 +214,12 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab }) => {
               <div style={{
                 color: 'var(--color-terracotta)',
                 backgroundColor: 'rgba(189, 99, 78, 0.08)',
-                padding: '12px',
-                borderRadius: '4px',
+                width: '48px',
+                height: '48px',
+                borderRadius: '50%',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
                 marginBottom: '24px'
               }}>
                 <Compass size={24} />
@@ -239,8 +243,12 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab }) => {
               <div style={{
                 color: 'var(--color-forest)',
                 backgroundColor: 'rgba(27, 51, 38, 0.08)',
-                padding: '12px',
-                borderRadius: '4px',
+                width: '48px',
+                height: '48px',
+                borderRadius: '50%',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
                 marginBottom: '24px'
               }}>
                 <Shield size={24} />
@@ -264,8 +272,12 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab }) => {
               <div style={{
                 color: 'var(--color-mahogany)',
                 backgroundColor: 'rgba(35, 23, 17, 0.08)',
-                padding: '12px',
-                borderRadius: '4px',
+                width: '48px',
+                height: '48px',
+                borderRadius: '50%',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
                 marginBottom: '24px'
               }}>
                 <Coffee size={24} />
