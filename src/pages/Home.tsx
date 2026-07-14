@@ -284,7 +284,7 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab }) => {
       <section style={{ padding: '40px 0' }}>
         <div className="container">
           <img 
-            src="/src/assets/al fresco garden dining.jpeg" 
+            src="/src/assets/final image.png" 
             alt="Al Fresco Garden Dining at Buglas Isla" 
             style={{
               width: '100%',
