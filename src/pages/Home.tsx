@@ -298,10 +298,10 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab }) => {
           <img 
             src="/src/assets/final image.jpg" 
             alt="Al Fresco Garden Dining at Buglas Isla" 
+            className="home-final-image"
             style={{
               width: '100%',
               height: 'auto',
-              aspectRatio: '21/9',
               objectFit: 'cover',
               borderRadius: '4px',
               border: '1px solid var(--color-border)',
