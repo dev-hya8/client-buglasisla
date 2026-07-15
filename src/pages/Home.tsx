@@ -144,7 +144,7 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab }) => {
 
             {/* Right Content */}
             <div>
-              <span style={{
+              <span className="philosophy-subtitle" style={{
                 fontFamily: 'var(--font-sans)',
                 fontSize: '0.75rem',
                 fontWeight: 600,
@@ -156,14 +156,14 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab }) => {
               }}>
                 Our Philosophy
               </span>
-              <h2 style={{
+              <h2 className="philosophy-title" style={{
                 fontSize: 'clamp(2.2rem, 4vw, 3rem)',
                 lineHeight: '1.2',
                 marginBottom: '24px'
               }}>
                 The Art of <span style={{ fontStyle: 'italic' }}>Adaptive Reuse</span>
               </h2>
-              <p style={{
+              <p className="philosophy-text" style={{
                 fontSize: '1rem',
                 color: 'var(--color-text)',
                 marginBottom: '20px',
@@ -171,7 +171,7 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab }) => {
               }}>
                 At Buglas Isla, we believe that preservation is a living action. Instead of letting history fade into memory, we dismantled a majestic, forgotten ancestral home in Bais City, cataloged its old timber beams, and reconstructed it here in Dumaguete.
               </p>
-              <p style={{
+              <p className="philosophy-text" style={{
                 fontSize: '1rem',
                 color: 'var(--color-text-light)',
                 marginBottom: '32px',
@@ -374,6 +374,20 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab }) => {
           .split-grid {
             grid-template-columns: 1fr !important;
             gap: 40px !important;
+          }
+          .philosophy-subtitle {
+            text-align: center !important;
+          }
+          .philosophy-title {
+            text-align: center !important;
+          }
+          .philosophy-text {
+            text-align: justify !important;
+          }
+          .hover-arrow {
+            display: flex !important;
+            margin: 0 auto !important;
+            justify-content: center !important;
           }
           .pillars-grid {
             grid-template-columns: 1fr !important;
