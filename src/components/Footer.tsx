@@ -56,7 +56,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
             }}>
               Buglas Isla is a sanctuary of adaptive reuse where ancestral history and authentic Filipino flavors converge to create a timeless, tranquil dining experience.
             </p>
-            <div style={{ display: 'flex', gap: '16px', justifyContent: 'center' }}>
+            <div style={{ display: 'flex', gap: '16px', justifyContent: 'center' }} className="footer-socials">
               <a href="https://share.google/EHXy6d1cmLduOBtnl" target="_blank" rel="noopener noreferrer" aria-label="Instagram" style={{ color: 'var(--color-capiz)', opacity: 0.7, display: 'inline-flex', alignItems: 'center' }} className="social-link">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
               </a>
@@ -70,7 +70,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
           </div>
 
           {/* Quick Links */}
-          <div>
+          <div className="footer-col-explore">
             <h4 style={{
               color: 'var(--color-capiz)',
               fontSize: '0.8rem',
@@ -78,7 +78,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
               textTransform: 'uppercase',
               letterSpacing: '0.1em',
               marginBottom: '20px'
-            }}>
+            }} className="footer-header">
               Explore
             </h4>
             <ul className="footer-links-list">
@@ -106,7 +106,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
           </div>
 
           {/* Hours */}
-          <div>
+          <div className="footer-col-hours">
             <h4 style={{
               color: 'var(--color-capiz)',
               fontSize: '0.8rem',
@@ -114,7 +114,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
               textTransform: 'uppercase',
               letterSpacing: '0.1em',
               marginBottom: '20px'
-            }}>
+            }} className="footer-header">
               Sanctuary Hours
             </h4>
             <div className="hours-desktop">
@@ -136,7 +136,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
           </div>
 
           {/* Newsletter / Contact Details */}
-          <div>
+          <div className="footer-col-touch">
             <h4 style={{
               color: 'var(--color-capiz)',
               fontSize: '0.8rem',
@@ -144,7 +144,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
               textTransform: 'uppercase',
               letterSpacing: '0.1em',
               marginBottom: '20px'
-            }}>
+            }} className="footer-header">
               Stay in Touch
             </h4>
             <p style={{ fontSize: '0.9rem', marginBottom: '16px', lineHeight: '1.4' }}>
@@ -166,6 +166,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
+                className="footer-input"
                 style={{
                   background: 'none',
                   border: 'none',
@@ -271,7 +272,44 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
           }
           .footer-grid {
             grid-template-columns: 1fr !important;
-            gap: 16px !important;
+            gap: 20px !important;
+          }
+          .footer-socials {
+            margin-top: 24px !important;
+            margin-bottom: 32px !important;
+            justify-content: center !important;
+          }
+          .footer-header {
+            font-size: 0.72rem !important;
+            letter-spacing: 0.18em !important;
+            font-family: var(--font-sans) !important;
+            text-transform: uppercase !important;
+            font-weight: 700 !important;
+            margin-bottom: 12px !important;
+          }
+          .footer-col-explore {
+            margin-bottom: 0px !important;
+          }
+          .footer-col-hours {
+            margin-top: -8px !important;
+            margin-bottom: 24px !important;
+          }
+          .footer-col-touch {
+            margin-top: 12px !important;
+          }
+          .footer-newsletter-form {
+            border-bottom: none !important;
+            padding-bottom: 0 !important;
+          }
+          .footer-input {
+            background-color: transparent !important;
+            border: none !important;
+            border-bottom: 1px solid rgba(250, 248, 245, 0.3) !important;
+            border-radius: 0 !important;
+            padding: 10px 0 !important;
+            -webkit-appearance: none !important;
+            color: var(--color-capiz) !important;
+            font-size: 0.9rem !important;
           }
           .footer-links-list {
             display: grid !important;
@@ -283,9 +321,6 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
           }
           .hours-mobile {
             display: block !important;
-          }
-          .footer-newsletter-form {
-            padding-bottom: 4px !important;
           }
           .copyright-desktop {
             display: none !important;
