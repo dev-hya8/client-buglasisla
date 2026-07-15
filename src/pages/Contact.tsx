@@ -129,7 +129,7 @@ export const Contact: React.FC = () => {
     <div className="animate-fade-in" style={{ paddingBottom: '100px' }}>
       
       {/* SECTION HEADER */}
-      <section style={{ padding: '80px 0 40px 0' }}>
+      <section className="contact-section" style={{ padding: '80px 0 40px 0' }}>
         <div className="container" style={{ textAlign: 'center', maxWidth: '600px' }}>
           <span style={{
             fontFamily: 'var(--font-sans)',
@@ -151,7 +151,7 @@ export const Contact: React.FC = () => {
       </section>
 
       {/* SPLIT CONTACT GRID */}
-      <section style={{ padding: '20px 0' }}>
+      <section className="contact-section" style={{ padding: '20px 0' }}>
         <div className="container">
           <div style={{
             display: 'grid',
@@ -161,7 +161,7 @@ export const Contact: React.FC = () => {
           }} className="contact-grid">
             
             {/* LEFT SIDE: DETAILS & MAP PLACEHOLDER */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '40px' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '40px', minWidth: 0 }}>
               
               {/* Information Row */}
               <div style={{
@@ -169,8 +169,17 @@ export const Contact: React.FC = () => {
                 padding: '40px',
                 border: '1px solid var(--color-border)',
                 borderRadius: '2px'
-              }}>
-                <h3 style={{ fontSize: '1.5rem', marginBottom: '20px' }}>Our Locations</h3>
+              }} className="info-card">
+                <h3 style={{ fontSize: '1.5rem', marginBottom: '6px' }}>Our Locations</h3>
+                <p className="mobile-only" style={{
+                  fontSize: '0.78rem',
+                  fontStyle: 'italic',
+                  color: 'var(--color-text-light)',
+                  marginBottom: '16px',
+                  marginTop: 0
+                }}>
+                  (Swipe right to view branch locations)
+                </p>
                 
                 {/* Location Tab Switcher */}
                 <div style={{
@@ -283,7 +292,8 @@ export const Contact: React.FC = () => {
               padding: '48px',
               border: '1px solid var(--color-border)',
               borderRadius: '4px',
-              boxShadow: '0 8px 30px rgba(35, 23, 17, 0.03)'
+              boxShadow: '0 8px 30px rgba(35, 23, 17, 0.03)',
+              minWidth: 0
             }} className="form-card">
               
               {!isSubmitted ? (
@@ -487,6 +497,9 @@ export const Contact: React.FC = () => {
           font-weight: 500;
         }
         @media (max-width: 900px) {
+          .contact-section {
+            padding: 40px 0 !important;
+          }
           .contact-grid {
             grid-template-columns: 1fr !important;
             gap: 40px !important;
@@ -496,13 +509,19 @@ export const Contact: React.FC = () => {
           }
         }
         @media (max-width: 600px) {
+          .info-card {
+            padding: 24px 16px !important;
+          }
+          .form-card {
+            padding: 24px 16px !important;
+          }
           .split-form-row {
             grid-template-columns: 1fr !important;
-            gap: 0 !important;
+            gap: 16px !important;
           }
           .split-form-row-3 {
             grid-template-columns: 1fr !important;
-            gap: 0 !important;
+            gap: 16px !important;
           }
         }
       `}</style>

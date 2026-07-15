@@ -263,6 +263,15 @@ export const Cafe: React.FC = () => {
                 );
               })}
             </div>
+            <p className="mobile-only" style={{
+              fontSize: '0.78rem',
+              fontStyle: 'italic',
+              color: 'var(--color-text-light)',
+              marginTop: '12px',
+              textAlign: 'center'
+            }}>
+              (Swipe right to view our menu options)
+            </p>
           </div>
 
           {/* Menu Grid and Food Image Split */}
