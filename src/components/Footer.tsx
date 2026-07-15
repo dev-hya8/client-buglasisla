@@ -295,9 +295,10 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
           }
           .footer-bottom {
             flex-direction: row !important;
-            justify-content: space-between !important;
+            justify-content: center !important;
             align-items: center !important;
             width: 100% !important;
+            text-align: center !important;
           }
         }
       `}</style>
