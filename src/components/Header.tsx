@@ -77,31 +77,9 @@ export const Header: React.FC<HeaderProps> = ({ activeTab, setActiveTab }) => {
               <button
                 key={item.id}
                 onClick={() => handleNavClick(item.id)}
-                style={{
-                  position: 'relative',
-                  fontFamily: 'var(--font-sans)',
-                  fontSize: '0.8rem',
-                  fontWeight: isActive ? 600 : 500,
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.12em',
-                  color: isActive ? 'var(--color-terracotta)' : 'var(--color-text)',
-                  padding: '8px 0',
-                  transition: 'var(--transition-fast)'
-                }}
+                className={`nav-item ${isActive ? 'active' : ''}`}
               >
                 {item.label}
-                {/* Underline hover effect */}
-                <span style={{
-                  position: 'absolute',
-                  bottom: 0,
-                  left: 0,
-                  width: '100%',
-                  height: '1px',
-                  backgroundColor: 'var(--color-terracotta)',
-                  transform: isActive ? 'scaleX(1)' : 'scaleX(0)',
-                  transition: 'var(--transition-smooth)',
-                  transformOrigin: 'center'
-                }} />
               </button>
             );
           })}
@@ -112,7 +90,6 @@ export const Header: React.FC<HeaderProps> = ({ activeTab, setActiveTab }) => {
           className="mobile-only"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           style={{
-            display: 'none',
             color: 'var(--color-mahogany)'
           }}
         >
@@ -159,17 +136,6 @@ export const Header: React.FC<HeaderProps> = ({ activeTab, setActiveTab }) => {
         </div>
       )}
 
-      {/* Quick responsive media queries injection */}
-      <style>{`
-        @media (max-width: 768px) {
-          .desktop-only {
-            display: none !important;
-          }
-          .mobile-only {
-            display: block !important;
-          }
-        }
-      `}</style>
     </header>
   );
 };

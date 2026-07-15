@@ -1,5 +1,8 @@
 import React from 'react';
 import { ArrowRight, Compass, Shield, Coffee } from 'lucide-react';
+import newHeroImg from '../assets/new hero.png';
+import architecturalImg from '../assets/architectural image.jpg.avif';
+import finalImg from '../assets/final image.jpg';
 
 interface HomeProps {
   setActiveTab: (tab: string) => void;
@@ -10,17 +13,21 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab }) => {
     <div className="animate-fade-in" style={{ paddingBottom: '100px' }}>
       
       {/* 1. HERO SECTION */}
-      <section style={{
-        padding: '60px 0 100px 0',
-        minHeight: '85vh',
+      <section className="hero-section" style={{
+        padding: '20px 0',
+        height: '80vh',
+        maxHeight: '600px',
         display: 'flex',
-        alignItems: 'center'
+        alignItems: 'center',
+        overflow: 'hidden'
       }}>
         <div className="container hero-grid" style={{
           display: 'grid',
           gridTemplateColumns: '1.2fr 1fr',
           gap: '64px',
-          alignItems: 'center'
+          alignItems: 'center',
+          height: '100%',
+          maxHeight: '100%'
         }}>
           
           {/* Hero Text */}
@@ -40,7 +47,7 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab }) => {
             <h1 style={{
               fontSize: 'clamp(3rem, 6vw, 4.5rem)',
               lineHeight: '1.1',
-              marginBottom: '24px',
+              marginBottom: '36px',
               color: 'var(--color-mahogany)'
             }}>
               Where history breathes <br />
@@ -60,27 +67,40 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab }) => {
               <button 
                 onClick={() => setActiveTab('contact')}
                 className="btn-primary"
+                style={{ height: '48px', boxSizing: 'border-box' }}
               >
                 Reserve a Table
               </button>
               <button 
                 onClick={() => setActiveTab('cafe')}
                 className="btn-secondary"
+                style={{ height: '48px', boxSizing: 'border-box' }}
               >
                 Explore the Menu
               </button>
             </div>
           </div>
 
-          <div className="animate-fade-up delay-2" style={{ width: '100%' }}>
+          <div className="animate-fade-up delay-2 hero-image-container" style={{ 
+            width: '100%',
+            height: '100%',
+            maxHeight: '100%',
+            overflow: 'hidden',
+            objectFit: 'cover',
+            objectPosition: 'center',
+            display: 'flex',
+            alignItems: 'center',
+            paddingRight: '60px',
+            boxSizing: 'border-box'
+          }}>
             <img 
-              src="/src/assets/new hero.png" 
+              src={newHeroImg} 
               alt="Buglas Isla Ancestral House" 
               style={{
                 width: '100%',
-                height: 'auto',
-                aspectRatio: '4/5',
+                height: '100%',
                 objectFit: 'cover',
+                objectPosition: 'center',
                 borderRadius: '4px',
                 border: '1px solid var(--color-border)',
                 boxShadow: '0 8px 30px rgba(35, 23, 17, 0.05)',
@@ -94,9 +114,7 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab }) => {
       {/* 2. THE PHILOSOPHY OF ADAPTIVE REUSE (Split Section) */}
       <section style={{
         padding: '120px 0',
-        backgroundColor: '#FAF5ED',
-        borderTop: '1px solid var(--color-border)',
-        borderBottom: '1px solid var(--color-border)'
+        backgroundColor: '#FAF5ED'
       }}>
         <div className="container">
           <div style={{
@@ -109,7 +127,7 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab }) => {
             {/* Left Image Placeholder */}
             <div>
               <img 
-                src="/src/assets/architectural image.jpg.avif" 
+                src={architecturalImg} 
                 alt="Details of architectural reassembly" 
                 style={{
                   width: '100%',
@@ -296,7 +314,7 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab }) => {
       <section style={{ padding: '40px 0' }}>
         <div className="container">
           <img 
-            src="/src/assets/final image.jpg" 
+            src={finalImg} 
             alt="Al Fresco Garden Dining at Buglas Isla" 
             className="home-final-image"
             style={{
@@ -327,6 +345,18 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab }) => {
           transition: var(--transition-fast);
         }
         @media (max-width: 900px) {
+          .hero-section {
+            height: auto !important;
+            max-height: none !important;
+            padding: 60px 0 !important;
+            overflow: visible !important;
+          }
+          .hero-image-container {
+            padding-right: 0 !important;
+            height: 300px !important;
+            max-height: 300px !important;
+            margin-bottom: 24px;
+          }
           .hero-grid {
             grid-template-columns: 1fr !important;
             gap: 20px !important;

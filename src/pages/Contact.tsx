@@ -107,6 +107,7 @@ export const Contact: React.FC = () => {
         origin: { y: 0.6 },
         colors: ['#BD634E', '#1B3326', '#231711', '#FAF8F5'] // terracotta, forest green, mahogany, capiz
       });
+      alert("We've received your request, form willl be functional upon deployment. Please contact hyacinthbalina@gmail.com to have the site live.");
     }
   };
 
@@ -238,7 +239,9 @@ export const Contact: React.FC = () => {
                   </div>
 
                   <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
-                    <Mail style={{ color: 'var(--color-mahogany)', flexShrink: 0, marginTop: '2px' }} size={20} />
+                    <a href={`mailto:${activeLoc.email}`} style={{ display: 'inline-flex' }} aria-label="Email active location">
+                      <Mail style={{ color: 'var(--color-mahogany)', flexShrink: 0, marginTop: '2px' }} size={20} />
+                    </a>
                     <div>
                       <p style={{ fontWeight: 600, fontSize: '0.95rem' }}>Email Us</p>
                       <p style={{ fontSize: '0.9rem', color: 'var(--color-text-light)', marginTop: '2px' }}>

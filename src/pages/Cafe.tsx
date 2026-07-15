@@ -1,4 +1,8 @@
 import React, { useState } from 'react';
+import gardenImg from '../assets/garden.png';
+import capizImg from '../assets/capiz.png';
+import mahoganyImg from '../assets/mahogany.png';
+import theCafeImg from '../assets/the cafe.png';
 
 export const Cafe: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState('coffee');
@@ -139,7 +143,7 @@ export const Cafe: React.FC = () => {
             {/* Zone 1 */}
             <div>
               <img 
-                src="/src/assets/garden.png" 
+                src={gardenImg} 
                 alt="The Garden Al Fresco at Buglas Isla" 
                 style={{
                   width: '100%',
@@ -161,7 +165,7 @@ export const Cafe: React.FC = () => {
             {/* Zone 2 */}
             <div>
               <img 
-                src="/src/assets/capiz.png" 
+                src={capizImg} 
                 alt="The Capiz Lounge at Buglas Isla" 
                 style={{
                   width: '100%',
@@ -183,7 +187,7 @@ export const Cafe: React.FC = () => {
             {/* Zone 3 */}
             <div>
               <img 
-                src="/src/assets/mahogany.png" 
+                src={mahoganyImg} 
                 alt="The Mahogany Room at Buglas Isla" 
                 style={{
                   width: '100%',
@@ -323,7 +327,7 @@ export const Cafe: React.FC = () => {
               top: '120px'
             }} className="menu-image-container">
               <img 
-                src="/src/assets/the cafe.png" 
+                src={theCafeImg} 
                 alt="Dining Experience at Buglas Isla" 
                 style={{
                   width: '100%',

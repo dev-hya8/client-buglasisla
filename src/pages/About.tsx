@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { History, Eye, Hammer, Heart } from 'lucide-react';
+import ourJourneyImg from '../assets/our journey.png';
+import preskoImg from '../assets/presko.png';
 
 export const About: React.FC = () => {
   const [activeStep, setActiveStep] = useState(0);
@@ -81,7 +83,7 @@ export const About: React.FC = () => {
       <section style={{ padding: '20px 0 60px 0' }}>
         <div className="container">
           <img 
-            src="/src/assets/our journey.png" 
+            src={ourJourneyImg} 
             alt="Archival Relocation Journey" 
             className="about-journey-image"
             style={{
@@ -211,32 +213,6 @@ export const About: React.FC = () => {
                   {timelineSteps[activeStep].desc}
                 </p>
               </div>
-
-              {/* Dynamic Image Suggestion */}
-              <div>
-                <span style={{
-                  display: 'block',
-                  fontFamily: 'var(--font-sans)',
-                  fontSize: '0.7rem',
-                  fontWeight: 700,
-                  textTransform: 'uppercase',
-                  color: 'var(--color-terracotta)',
-                  letterSpacing: '0.05em',
-                  marginBottom: '8px'
-                }}>
-                  Required Imagery Vibe
-                </span>
-                <div style={{
-                  borderLeft: '2px solid var(--color-terracotta)',
-                  paddingLeft: '16px',
-                  fontFamily: 'var(--font-sans)',
-                  fontSize: '0.85rem',
-                  fontStyle: 'italic',
-                  color: 'var(--color-text)'
-                }}>
-                  "{timelineSteps[activeStep].imagery}"
-                </div>
-              </div>
             </div>
 
           </div>
@@ -266,7 +242,7 @@ export const About: React.FC = () => {
             </p>
           </div>
             <img 
-              src="/src/assets/presko.png" 
+              src={preskoImg} 
               alt="Sliding Capiz Shell Panels" 
               style={{
                 width: '100%',

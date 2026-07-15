@@ -1,14 +1,13 @@
-import React from 'react';
-import { Mail, ArrowUp } from 'lucide-react';
+import React, { useState } from 'react';
+import { Mail } from 'lucide-react';
 
 interface FooterProps {
   setActiveTab: (tab: string) => void;
 }
 
 export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+  const [showNotification, setShowNotification] = useState(false);
+  const [email, setEmail] = useState('');
 
   const handleNavClick = (tabId: string) => {
     setActiveTab(tabId);
@@ -32,7 +31,12 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
           marginBottom: '60px'
         }} className="footer-grid">
           {/* Brand Col */}
-          <div>
+          <div style={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            textAlign: 'center'
+          }}>
             <h3 style={{
               fontFamily: 'var(--font-serif)',
               color: 'var(--color-capiz)',
@@ -46,18 +50,20 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
               fontSize: '0.9rem',
               lineHeight: '1.6',
               maxWidth: '300px',
-              marginBottom: '24px'
+              marginBottom: '24px',
+              margin: '0 auto 24px auto',
+              textAlign: 'justify'
             }}>
-              A restored ancestral home from Bais City, operating as a sanctuary of adaptive reuse in Piapi, Dumaguete.
+              Buglas Isla is a sanctuary of adaptive reuse where ancestral history and authentic Filipino flavors converge to create a timeless, tranquil dining experience.
             </p>
-            <div style={{ display: 'flex', gap: '16px' }}>
-              <a href="#" aria-label="Instagram" style={{ color: 'var(--color-capiz)', opacity: 0.7, display: 'inline-flex', alignItems: 'center' }} className="social-link">
+            <div style={{ display: 'flex', gap: '16px', justifyContent: 'center' }}>
+              <a href="https://share.google/EHXy6d1cmLduOBtnl" target="_blank" rel="noopener noreferrer" aria-label="Instagram" style={{ color: 'var(--color-capiz)', opacity: 0.7, display: 'inline-flex', alignItems: 'center' }} className="social-link">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
               </a>
-              <a href="#" aria-label="Facebook" style={{ color: 'var(--color-capiz)', opacity: 0.7, display: 'inline-flex', alignItems: 'center' }} className="social-link">
+              <a href="https://www.facebook.com/buglasislacafe/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" style={{ color: 'var(--color-capiz)', opacity: 0.7, display: 'inline-flex', alignItems: 'center' }} className="social-link">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
               </a>
-              <a href="mailto:buglasislacafe@riesa.ph" aria-label="Email" style={{ color: 'var(--color-capiz)', opacity: 0.7 }} className="social-link">
+              <a href="mailto:buglasislacafe@riesa.ph" aria-label="Email" style={{ color: 'var(--color-capiz)', opacity: 0.7, display: 'inline-flex', alignItems: 'center' }} className="social-link">
                 <Mail size={20} />
               </a>
             </div>
@@ -144,10 +150,22 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
             <p style={{ fontSize: '0.9rem', marginBottom: '16px', lineHeight: '1.4' }}>
               Join our mailing list for exclusive updates.
             </p>
-            <form className="footer-newsletter-form" onSubmit={(e) => e.preventDefault()}>
+            <form className="footer-newsletter-form" onSubmit={(e) => {
+              e.preventDefault();
+              if (email.trim()) {
+                setShowNotification(true);
+                setEmail('');
+                setTimeout(() => {
+                  setShowNotification(false);
+                }, 3000);
+              }
+            }}>
               <input 
                 type="email" 
                 placeholder="Your email address" 
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
                 style={{
                   background: 'none',
                   border: 'none',
@@ -170,27 +188,38 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
           borderTop: '1px solid rgba(250, 248, 245, 0.1)',
           paddingTop: '32px',
           display: 'flex',
-          justifyContent: 'space-between',
+          justifyContent: 'center',
           alignItems: 'center',
-          fontSize: '0.8rem'
+          fontSize: '0.8rem',
+          textAlign: 'center'
         }} className="footer-bottom">
-          <p className="copyright-desktop">© {new Date().getFullYear()} Buglas Isla. Dumaguete City, Philippines. All rights reserved.</p>
+          <p className="copyright-desktop">© {new Date().getFullYear()} Buglas Isla. All rights reserved.</p>
           <p className="copyright-mobile">© {new Date().getFullYear()} Buglas Isla.</p>
-          <button 
-            onClick={scrollToTop} 
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: '6px',
-              color: 'var(--color-capiz)',
-              opacity: 0.8
-            }}
-            className="back-to-top"
-          >
-            Back to top <ArrowUp size={14} />
-          </button>
         </div>
       </div>
+
+      {/* Floating 3s Toast Notification */}
+      {showNotification && (
+        <div style={{
+          position: 'fixed',
+          bottom: '40px',
+          right: '40px',
+          backgroundColor: 'var(--color-forest)',
+          color: 'var(--color-capiz)',
+          padding: '16px 28px',
+          borderRadius: '4px',
+          boxShadow: '0 8px 30px rgba(0,0,0,0.15)',
+          zIndex: 9999,
+          fontFamily: 'var(--font-sans)',
+          fontSize: '0.9rem',
+          fontWeight: 500,
+          letterSpacing: '0.02em',
+          border: '1px solid rgba(250, 248, 245, 0.1)',
+          animation: 'fadeIn 0.3s ease'
+        }}>
+          We've received your email!
+        </div>
+      )}
 
       <style>{`
         .social-link:hover {
