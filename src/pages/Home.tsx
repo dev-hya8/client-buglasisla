@@ -94,8 +94,8 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab }) => {
             boxSizing: 'border-box'
           }}>
             <img 
-              src={architecturalImg} 
-              alt="Details of architectural reassembly" 
+              src={newHeroImg} 
+              alt="Buglas Isla Ancestral House" 
               style={{
                 width: '100%',
                 height: '100%',
@@ -127,8 +127,8 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab }) => {
             {/* Left Image Placeholder */}
             <div>
               <img 
-                src={newHeroImg} 
-                alt="Buglas Isla Ancestral House" 
+                src={architecturalImg} 
+                alt="Details of architectural reassembly" 
                 style={{
                   width: '100%',
                   height: 'auto',
