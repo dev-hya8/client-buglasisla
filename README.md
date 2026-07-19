@@ -9,7 +9,7 @@ This project is a curated web experience designed to honor the heritage and atmo
 - **Framework:** React
 - **Language:** TypeScript
 - **Build Tool:** Vite
-- **Styling:** Tailwind CSS
+- **Styling:** Custom Vanilla CSS
 
 ## Getting Started
 
