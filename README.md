@@ -1,32 +1,52 @@
-# React + TypeScript + Vite
+# Buglas Isla
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Buglas Isla is the official digital sanctuary for the Buglas Isla Heritage Café and Ancestral House.
 
-Currently, two official plugins are available:
+This project is a curated web experience designed to honor the heritage and atmosphere of the physical space. Built with a minimalist approach, it focuses on immersive storytelling, elegant layout hierarchies, and high-performance delivery.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Tech Stack
 
-## React Compiler
+- **Framework:** React
+- **Language:** TypeScript
+- **Build Tool:** Vite
+- **Styling:** Tailwind CSS
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Getting Started
 
-## Expanding the Oxlint configuration
+### Prerequisites
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+- Node.js (v18 or higher)
+- npm or yarn
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/hya-founder/client-buglasisla.git
+
+# Navigate to the directory
+cd client-buglasisla
+
+# Install dependencies
+npm install
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+### Development
+
+```bash
+# Start the local development server
+npm run dev
+```
+
+### Production
+
+```bash
+# Build for production
+npm run build
+
+# Preview the production build
+npm run preview
+```
+
+---
+Built by Hya.
