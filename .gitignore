@@ -25,3 +25,8 @@ dist-ssr
 
 # Local npm cache
 .npm_local_cache
+
+# Environment variables
+.env
+.env.local
+.env.*.local

@@ -107,7 +107,7 @@ export const Contact: React.FC = () => {
         origin: { y: 0.6 },
         colors: ['#BD634E', '#1B3326', '#231711', '#FAF8F5'] // terracotta, forest green, mahogany, capiz
       });
-      alert("We've received your request, form willl be functional upon deployment. Please contact hyacinthbalina@gmail.com to have the site live.");
+      alert("We've received your info!");
     }
   };
 
