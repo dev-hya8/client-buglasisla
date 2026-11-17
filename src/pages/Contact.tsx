@@ -198,7 +198,12 @@ export const Contact: React.FC = () => {
                       key={idx}
                       onClick={() => handleBranchSelect(idx)}
                       style={{
-                        padding: '8px 16px',
+                        padding: '12px 18px',
+                        minHeight: '48px',
+                        minWidth: '48px',
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
                         borderRadius: '2px',
                         fontSize: '0.85rem',
                         fontWeight: 600,
@@ -208,7 +213,8 @@ export const Contact: React.FC = () => {
                         transition: 'var(--transition-fast)',
                         backgroundColor: selectedLocationIdx === idx ? 'var(--color-mahogany)' : 'transparent',
                         color: selectedLocationIdx === idx ? 'var(--color-capiz)' : 'var(--color-text-light)',
-                        border: '1px solid ' + (selectedLocationIdx === idx ? 'var(--color-mahogany)' : 'var(--color-border)')
+                        border: '1px solid ' + (selectedLocationIdx === idx ? 'var(--color-mahogany)' : 'var(--color-border)'),
+                        touchAction: 'manipulation'
                       }}
                     >
                       {loc.shortName}

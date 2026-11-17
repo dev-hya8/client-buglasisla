@@ -58,19 +58,25 @@ export const Header: React.FC<HeaderProps> = ({ activeTab, setActiveTab }) => {
         {/* Serif Wordmark Logo */}
         <button 
           onClick={() => handleNavClick('home')}
+          aria-label="Buglas Isla Home"
           style={{
             fontFamily: 'var(--font-serif)',
             fontSize: '1.65rem',
             letterSpacing: '0.08em',
             color: 'var(--color-mahogany)',
-            fontWeight: 400
+            fontWeight: 400,
+            minHeight: '48px',
+            minWidth: '48px',
+            display: 'inline-flex',
+            alignItems: 'center',
+            padding: '4px 8px'
           }}
         >
           BUGLAS ISLA
         </button>
 
         {/* Desktop Navigation Links */}
-        <nav style={{ display: 'flex', gap: '32px' }} className="desktop-only">
+        <nav style={{ display: 'flex', gap: '24px' }} className="desktop-only">
           {navItems.map((item) => {
             const isActive = activeTab === item.id;
             return (
@@ -78,6 +84,13 @@ export const Header: React.FC<HeaderProps> = ({ activeTab, setActiveTab }) => {
                 key={item.id}
                 onClick={() => handleNavClick(item.id)}
                 className={`nav-item ${isActive ? 'active' : ''}`}
+                style={{
+                  minHeight: '48px',
+                  minWidth: '48px',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  padding: '12px 10px'
+                }}
               >
                 {item.label}
               </button>
@@ -89,8 +102,15 @@ export const Header: React.FC<HeaderProps> = ({ activeTab, setActiveTab }) => {
         <button 
           className="mobile-only"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
           style={{
-            color: 'var(--color-mahogany)'
+            color: 'var(--color-mahogany)',
+            minWidth: '48px',
+            minHeight: '48px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: '12px'
           }}
         >
           {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -110,7 +130,7 @@ export const Header: React.FC<HeaderProps> = ({ activeTab, setActiveTab }) => {
           display: 'flex',
           flexDirection: 'column',
           padding: '40px',
-          gap: '24px',
+          gap: '16px',
           animation: 'fadeIn 0.3s ease'
         }}>
           {navItems.map((item) => {
@@ -125,7 +145,10 @@ export const Header: React.FC<HeaderProps> = ({ activeTab, setActiveTab }) => {
                   color: isActive ? 'var(--color-terracotta)' : 'var(--color-mahogany)',
                   textAlign: 'left',
                   borderBottom: '1px solid var(--color-border)',
-                  paddingBottom: '12px',
+                  padding: '14px 0',
+                  minHeight: '48px',
+                  display: 'flex',
+                  alignItems: 'center',
                   width: '100%'
                 }}
               >

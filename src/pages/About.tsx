@@ -1,7 +1,14 @@
 import React, { useState } from 'react';
 import { History, Eye, Hammer, Heart } from 'lucide-react';
-import ourJourneyImg from '../assets/our journey.png';
-import preskoImg from '../assets/presko.png';
+import ourJourneyWebp from '../assets/our-journey.webp';
+import ourJourney600 from '../assets/our-journey-600w.webp';
+import ourJourney1000 from '../assets/our-journey-1000w.webp';
+import ourJourneyFallback from '../assets/our journey.png';
+
+import preskoWebp from '../assets/presko.webp';
+import presko500 from '../assets/presko-500w.webp';
+import presko800 from '../assets/presko-800w.webp';
+import preskoFallback from '../assets/presko.png';
 
 export const About: React.FC = () => {
   const [activeStep, setActiveStep] = useState(0);
@@ -82,20 +89,31 @@ export const About: React.FC = () => {
       {/* 2. ARCHIVAL COVER IMAGE */}
       <section style={{ padding: '20px 0 60px 0' }}>
         <div className="container">
-          <img 
-            src={ourJourneyImg} 
-            alt="Archival Relocation Journey" 
-            className="about-journey-image"
-            style={{
-              width: '100%',
-              height: 'auto',
-              objectFit: 'cover',
-              borderRadius: '4px',
-              border: '1px solid var(--color-border)',
-              boxShadow: '0 8px 30px rgba(35, 23, 17, 0.05)',
-              display: 'block'
-            }} 
-          />
+          <picture style={{ width: '100%', display: 'block' }}>
+            <source 
+              type="image/webp" 
+              srcSet={`${ourJourney600} 600w, ${ourJourney1000} 1000w, ${ourJourneyWebp} 1200w`} 
+              sizes="(max-width: 900px) 100vw, 1200px" 
+            />
+            <img 
+              src={ourJourneyFallback} 
+              alt="Archival Relocation Journey" 
+              className="about-journey-image"
+              width="1200"
+              height="708"
+              loading="lazy"
+              decoding="async"
+              style={{
+                width: '100%',
+                height: 'auto',
+                objectFit: 'cover',
+                borderRadius: '4px',
+                border: '1px solid var(--color-border)',
+                boxShadow: '0 8px 30px rgba(35, 23, 17, 0.05)',
+                display: 'block'
+              }} 
+            />
+          </picture>
         </div>
       </section>
 
@@ -241,9 +259,19 @@ export const About: React.FC = () => {
               We have retained these passive cooling dynamics. The ocean breeze enters freely from the coast, passing through the garden foliage, and circulating through the high wood trusses. It is natural cooling that encourages you to linger.
             </p>
           </div>
+          <picture style={{ width: '100%', display: 'block' }}>
+            <source 
+              type="image/webp" 
+              srcSet={`${presko500} 500w, ${presko800} 800w, ${preskoWebp} 1000w`} 
+              sizes="(max-width: 900px) 100vw, 500px" 
+            />
             <img 
-              src={preskoImg} 
+              src={preskoFallback} 
               alt="Sliding Capiz Shell Panels" 
+              width="1000"
+              height="760"
+              loading="lazy"
+              decoding="async"
               style={{
                 width: '100%',
                 height: 'auto',
@@ -255,6 +283,7 @@ export const About: React.FC = () => {
                 display: 'block'
               }} 
             />
+          </picture>
         </div>
       </section>
 

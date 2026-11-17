@@ -1,8 +1,23 @@
 import React, { useState } from 'react';
-import gardenImg from '../assets/garden.png';
-import capizImg from '../assets/capiz.png';
-import mahoganyImg from '../assets/mahogany.png';
-import theCafeImg from '../assets/the cafe.png';
+import gardenWebp from '../assets/garden.webp';
+import garden500 from '../assets/garden-500w.webp';
+import garden800 from '../assets/garden-800w.webp';
+import gardenFallback from '../assets/garden.png';
+
+import capizWebp from '../assets/capiz.webp';
+import capiz500 from '../assets/capiz-500w.webp';
+import capiz800 from '../assets/capiz-800w.webp';
+import capizFallback from '../assets/capiz.png';
+
+import mahoganyWebp from '../assets/mahogany.webp';
+import mahogany500 from '../assets/mahogany-500w.webp';
+import mahogany800 from '../assets/mahogany-800w.webp';
+import mahoganyFallback from '../assets/mahogany.png';
+
+import theCafeWebp from '../assets/the-cafe.webp';
+import theCafe500 from '../assets/the-cafe-500w.webp';
+import theCafe800 from '../assets/the-cafe-800w.webp';
+import theCafeFallback from '../assets/the cafe.png';
 
 export const Cafe: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState('coffee');
@@ -142,20 +157,31 @@ export const Cafe: React.FC = () => {
             
             {/* Zone 1 */}
             <div>
-              <img 
-                src={gardenImg} 
-                alt="The Garden Al Fresco at Buglas Isla" 
-                style={{
-                  width: '100%',
-                  height: 'auto',
-                  aspectRatio: '4/3',
-                  objectFit: 'cover',
-                  borderRadius: '4px',
-                  border: '1px solid var(--color-border)',
-                  boxShadow: '0 8px 30px rgba(35, 23, 17, 0.05)',
-                  display: 'block'
-                }} 
-              />
+              <picture style={{ width: '100%', display: 'block' }}>
+                <source 
+                  type="image/webp" 
+                  srcSet={`${garden500} 500w, ${garden800} 800w, ${gardenWebp} 1000w`} 
+                  sizes="(max-width: 900px) 100vw, 33vw" 
+                />
+                <img 
+                  src={gardenFallback} 
+                  alt="The Garden Al Fresco at Buglas Isla" 
+                  width="1000"
+                  height="760"
+                  loading="lazy"
+                  decoding="async"
+                  style={{
+                    width: '100%',
+                    height: 'auto',
+                    aspectRatio: '4/3',
+                    objectFit: 'cover',
+                    borderRadius: '4px',
+                    border: '1px solid var(--color-border)',
+                    boxShadow: '0 8px 30px rgba(35, 23, 17, 0.05)',
+                    display: 'block'
+                  }} 
+                />
+              </picture>
               <h3 style={{ fontSize: '1.4rem', marginTop: '20px', marginBottom: '8px' }}>The Garden Al Fresco</h3>
               <p style={{ fontSize: '0.9rem', color: 'var(--color-text-light)', lineHeight: '1.6' }}>
                 Surrounded by lush local greenery, orchids, and stone walkways. Feel the fresh coastal breeze under high canopy trees.
@@ -164,20 +190,31 @@ export const Cafe: React.FC = () => {
 
             {/* Zone 2 */}
             <div>
-              <img 
-                src={capizImg} 
-                alt="The Capiz Lounge at Buglas Isla" 
-                style={{
-                  width: '100%',
-                  height: 'auto',
-                  aspectRatio: '4/3',
-                  objectFit: 'cover',
-                  borderRadius: '4px',
-                  border: '1px solid var(--color-border)',
-                  boxShadow: '0 8px 30px rgba(35, 23, 17, 0.05)',
-                  display: 'block'
-                }} 
-              />
+              <picture style={{ width: '100%', display: 'block' }}>
+                <source 
+                  type="image/webp" 
+                  srcSet={`${capiz500} 500w, ${capiz800} 800w, ${capizWebp} 1000w`} 
+                  sizes="(max-width: 900px) 100vw, 33vw" 
+                />
+                <img 
+                  src={capizFallback} 
+                  alt="The Capiz Lounge at Buglas Isla" 
+                  width="1000"
+                  height="755"
+                  loading="lazy"
+                  decoding="async"
+                  style={{
+                    width: '100%',
+                    height: 'auto',
+                    aspectRatio: '4/3',
+                    objectFit: 'cover',
+                    borderRadius: '4px',
+                    border: '1px solid var(--color-border)',
+                    boxShadow: '0 8px 30px rgba(35, 23, 17, 0.05)',
+                    display: 'block'
+                  }} 
+                />
+              </picture>
               <h3 style={{ fontSize: '1.4rem', marginTop: '20px', marginBottom: '8px' }}>The Capiz Lounge</h3>
               <p style={{ fontSize: '0.9rem', color: 'var(--color-text-light)', lineHeight: '1.6' }}>
                 Soft natural lighting diffused through vintage capiz panels. Ideal for quiet afternoons, reading, and signature coffees.
@@ -186,20 +223,31 @@ export const Cafe: React.FC = () => {
 
             {/* Zone 3 */}
             <div>
-              <img 
-                src={mahoganyImg} 
-                alt="The Mahogany Room at Buglas Isla" 
-                style={{
-                  width: '100%',
-                  height: 'auto',
-                  aspectRatio: '4/3',
-                  objectFit: 'cover',
-                  borderRadius: '4px',
-                  border: '1px solid var(--color-border)',
-                  boxShadow: '0 8px 30px rgba(35, 23, 17, 0.05)',
-                  display: 'block'
-                }} 
-              />
+              <picture style={{ width: '100%', display: 'block' }}>
+                <source 
+                  type="image/webp" 
+                  srcSet={`${mahogany500} 500w, ${mahogany800} 800w, ${mahoganyWebp} 1000w`} 
+                  sizes="(max-width: 900px) 100vw, 33vw" 
+                />
+                <img 
+                  src={mahoganyFallback} 
+                  alt="The Mahogany Room at Buglas Isla" 
+                  width="1000"
+                  height="760"
+                  loading="lazy"
+                  decoding="async"
+                  style={{
+                    width: '100%',
+                    height: 'auto',
+                    aspectRatio: '4/3',
+                    objectFit: 'cover',
+                    borderRadius: '4px',
+                    border: '1px solid var(--color-border)',
+                    boxShadow: '0 8px 30px rgba(35, 23, 17, 0.05)',
+                    display: 'block'
+                  }} 
+                />
+              </picture>
               <h3 style={{ fontSize: '1.4rem', marginTop: '20px', marginBottom: '8px' }}>The Mahogany Room</h3>
               <p style={{ fontSize: '0.9rem', color: 'var(--color-text-light)', lineHeight: '1.6' }}>
                 Surrounded by the original 1930s load-bearing timbers. A formal, sophisticated environment highlighting structural heritage.
@@ -236,7 +284,8 @@ export const Cafe: React.FC = () => {
               borderRadius: '4px',
               border: '1px solid var(--color-border)',
               maxWidth: '100%',
-              overflowX: 'auto'
+              overflowX: 'auto',
+              gap: '8px'
             }} className="menu-tabs-container">
               {menuCategories.map((cat) => {
                 const isActive = activeCategory === cat.id;
@@ -246,16 +295,22 @@ export const Cafe: React.FC = () => {
                     onClick={() => setActiveCategory(cat.id)}
                     style={{
                       fontFamily: 'var(--font-sans)',
-                      fontSize: '0.8rem',
+                      fontSize: '0.85rem',
                       fontWeight: 600,
                       textTransform: 'uppercase',
                       letterSpacing: '0.05em',
-                      padding: '10px 24px',
+                      padding: '12px 24px',
+                      minHeight: '48px',
+                      minWidth: '48px',
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
                       borderRadius: '2px',
                       backgroundColor: isActive ? 'var(--color-mahogany)' : 'transparent',
                       color: isActive ? 'var(--color-capiz)' : 'var(--color-text)',
                       transition: 'var(--transition-fast)',
-                      whiteSpace: 'nowrap'
+                      whiteSpace: 'nowrap',
+                      touchAction: 'manipulation'
                     }}
                   >
                     {cat.label}
@@ -335,20 +390,31 @@ export const Cafe: React.FC = () => {
               position: 'sticky',
               top: '120px'
             }} className="menu-image-container">
-              <img 
-                src={theCafeImg} 
-                alt="Dining Experience at Buglas Isla" 
-                style={{
-                  width: '100%',
-                  height: 'auto',
-                  aspectRatio: '1/1',
-                  objectFit: 'cover',
-                  borderRadius: '4px',
-                  border: '1px solid var(--color-border)',
-                  boxShadow: '0 8px 30px rgba(35, 23, 17, 0.05)',
-                  display: 'block'
-                }} 
-              />
+              <picture style={{ width: '100%', display: 'block' }}>
+                <source 
+                  type="image/webp" 
+                  srcSet={`${theCafe500} 500w, ${theCafe800} 800w, ${theCafeWebp} 1000w`} 
+                  sizes="(max-width: 900px) 100vw, 40vw" 
+                />
+                <img 
+                  src={theCafeFallback} 
+                  alt="Dining Experience at Buglas Isla" 
+                  width="1000"
+                  height="960"
+                  loading="lazy"
+                  decoding="async"
+                  style={{
+                    width: '100%',
+                    height: 'auto',
+                    aspectRatio: '1/1',
+                    objectFit: 'cover',
+                    borderRadius: '4px',
+                    border: '1px solid var(--color-border)',
+                    boxShadow: '0 8px 30px rgba(35, 23, 17, 0.05)',
+                    display: 'block'
+                  }} 
+                />
+              </picture>
             </div>
 
           </div>

@@ -1,8 +1,16 @@
 import React from 'react';
 import { ArrowRight, Compass, Shield, Coffee } from 'lucide-react';
-import newHeroImg from '../assets/new hero.png';
+import newHeroWebp from '../assets/new-hero.webp';
+import newHero600 from '../assets/new-hero-600w.webp';
+import newHero1000 from '../assets/new-hero-1000w.webp';
+import newHeroFallback from '../assets/new hero.png';
+
 import architecturalImg from '../assets/architectural image.jpg.avif';
-import finalImg from '../assets/final image.jpg';
+
+import finalImageWebp from '../assets/final-image.webp';
+import finalImage800 from '../assets/final-image-800w.webp';
+import finalImage1200 from '../assets/final-image-1200w.webp';
+import finalImageFallback from '../assets/final image.jpg';
 
 interface HomeProps {
   setActiveTab: (tab: string) => void;
@@ -67,14 +75,14 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab }) => {
               <button 
                 onClick={() => setActiveTab('contact')}
                 className="btn-primary"
-                style={{ height: '48px', boxSizing: 'border-box' }}
+                style={{ minHeight: '48px', minWidth: '48px', height: '48px', boxSizing: 'border-box' }}
               >
                 Reserve a Table
               </button>
               <button 
                 onClick={() => setActiveTab('cafe')}
                 className="btn-secondary"
-                style={{ height: '48px', boxSizing: 'border-box' }}
+                style={{ minHeight: '48px', minWidth: '48px', height: '48px', boxSizing: 'border-box' }}
               >
                 Explore the Menu
               </button>
@@ -93,20 +101,31 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab }) => {
             paddingRight: '60px',
             boxSizing: 'border-box'
           }}>
-            <img 
-              src={newHeroImg} 
-              alt="Buglas Isla Ancestral House" 
-              style={{
-                width: '100%',
-                height: '100%',
-                objectFit: 'cover',
-                objectPosition: 'center',
-                borderRadius: '4px',
-                border: '1px solid var(--color-border)',
-                boxShadow: '0 8px 30px rgba(35, 23, 17, 0.05)',
-                display: 'block'
-              }} 
-            />
+            <picture style={{ width: '100%', height: '100%', display: 'block' }}>
+              <source 
+                type="image/webp" 
+                srcSet={`${newHero600} 600w, ${newHero1000} 1000w, ${newHeroWebp} 1200w`} 
+                sizes="(max-width: 900px) 100vw, 50vw" 
+              />
+              <img 
+                src={newHeroFallback} 
+                alt="Buglas Isla Ancestral House restored in Dumaguete City" 
+                width="1066"
+                height="1176"
+                fetchPriority="high"
+                decoding="async"
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                  objectPosition: 'center',
+                  borderRadius: '4px',
+                  border: '1px solid var(--color-border)',
+                  boxShadow: '0 8px 30px rgba(35, 23, 17, 0.05)',
+                  display: 'block'
+                }} 
+              />
+            </picture>
           </div>
         </div>
       </section>
@@ -128,7 +147,11 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab }) => {
             <div>
               <img 
                 src={architecturalImg} 
-                alt="Details of architectural reassembly" 
+                alt="Details of architectural reassembly of Buglas Isla" 
+                width="480"
+                height="480"
+                loading="lazy"
+                decoding="async"
                 style={{
                   width: '100%',
                   height: 'auto',
@@ -189,7 +212,10 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab }) => {
                   fontWeight: 600,
                   fontSize: '0.9rem',
                   letterSpacing: '0.05em',
-                  textTransform: 'uppercase'
+                  textTransform: 'uppercase',
+                  minHeight: '48px',
+                  minWidth: '48px',
+                  padding: '12px 0'
                 }}
                 className="hover-arrow"
               >
@@ -313,20 +339,31 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab }) => {
       {/* 4. VISUAL HERO CALL-OUT */}
       <section style={{ padding: '40px 0' }}>
         <div className="container">
-          <img 
-            src={finalImg} 
-            alt="Al Fresco Garden Dining at Buglas Isla" 
-            className="home-final-image"
-            style={{
-              width: '100%',
-              height: 'auto',
-              objectFit: 'cover',
-              borderRadius: '4px',
-              border: '1px solid var(--color-border)',
-              boxShadow: '0 8px 30px rgba(35, 23, 17, 0.05)',
-              display: 'block'
-            }} 
-          />
+          <picture style={{ width: '100%', display: 'block' }}>
+            <source 
+              type="image/webp" 
+              srcSet={`${finalImage800} 800w, ${finalImage1200} 1200w, ${finalImageWebp} 1600w`} 
+              sizes="(max-width: 900px) 100vw, 1200px" 
+            />
+            <img 
+              src={finalImageFallback} 
+              alt="Al Fresco Garden Dining at Buglas Isla" 
+              className="home-final-image"
+              width="1600"
+              height="686"
+              loading="lazy"
+              decoding="async"
+              style={{
+                width: '100%',
+                height: 'auto',
+                objectFit: 'cover',
+                borderRadius: '4px',
+                border: '1px solid var(--color-border)',
+                boxShadow: '0 8px 30px rgba(35, 23, 17, 0.05)',
+                display: 'block'
+              }} 
+            />
+          </picture>
         </div>
       </section>
 

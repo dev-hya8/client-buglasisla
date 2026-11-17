@@ -57,14 +57,14 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
               Buglas Isla is a sanctuary of adaptive reuse where ancestral history and authentic Filipino flavors converge to create a timeless, tranquil dining experience.
             </p>
             <div style={{ display: 'flex', gap: '16px', justifyContent: 'center' }} className="footer-socials">
-              <a href="https://share.google/EHXy6d1cmLduOBtnl" target="_blank" rel="noopener noreferrer" aria-label="Instagram" style={{ color: 'var(--color-capiz)', opacity: 0.7, display: 'inline-flex', alignItems: 'center' }} className="social-link">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+              <a href="https://share.google/EHXy6d1cmLduOBtnl" target="_blank" rel="noopener noreferrer" aria-label="Instagram" style={{ color: 'var(--color-capiz)', opacity: 0.7, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', minWidth: '48px', minHeight: '48px' }} className="social-link">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
               </a>
-              <a href="https://www.facebook.com/buglasislacafe/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" style={{ color: 'var(--color-capiz)', opacity: 0.7, display: 'inline-flex', alignItems: 'center' }} className="social-link">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+              <a href="https://www.facebook.com/buglasislacafe/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" style={{ color: 'var(--color-capiz)', opacity: 0.7, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', minWidth: '48px', minHeight: '48px' }} className="social-link">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
               </a>
-              <a href="mailto:buglasislacafe@riesa.ph" aria-label="Email" style={{ color: 'var(--color-capiz)', opacity: 0.7, display: 'inline-flex', alignItems: 'center' }} className="social-link">
-                <Mail size={20} />
+              <a href="mailto:buglasislacafe@riesa.ph" aria-label="Email" style={{ color: 'var(--color-capiz)', opacity: 0.7, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', minWidth: '48px', minHeight: '48px' }} className="social-link">
+                <Mail size={22} />
               </a>
             </div>
           </div>
@@ -174,10 +174,25 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
                   fontFamily: 'var(--font-sans)',
                   fontSize: '0.85rem',
                   width: '100%',
+                  minHeight: '48px',
                   outline: 'none'
                 }}
               />
-              <button type="submit" style={{ color: 'var(--color-capiz)', marginLeft: '8px', opacity: 0.8 }}>
+              <button 
+                type="submit" 
+                aria-label="Subscribe to newsletter"
+                style={{ 
+                  color: 'var(--color-capiz)', 
+                  marginLeft: '8px', 
+                  opacity: 0.8,
+                  minWidth: '48px',
+                  minHeight: '48px',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  fontSize: '1.2rem'
+                }}
+              >
                 →
               </button>
             </form>
@@ -235,12 +250,17 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
           transition: var(--transition-fast);
           color: inherit;
           text-align: left;
+          min-height: 48px;
+          display: inline-flex;
+          align-items: center;
+          padding: 8px 0;
+          touch-action: manipulation;
         }
         .footer-links-list {
           list-style: none;
           display: flex;
           flex-direction: column;
-          gap: 12px;
+          gap: 8px;
           font-size: 0.9rem;
         }
         .footer-newsletter-form {
